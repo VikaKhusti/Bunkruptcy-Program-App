@@ -1,0 +1,16 @@
+C:\Users\user\source\repos\Bunkruptcy Program WinForm App\Bunkruptcy Program WinForm App\bin\Debug\netcoreapp3.1\Bunkruptcy Program WinForm App.exe
+C:\Users\user\source\repos\Bunkruptcy Program WinForm App\Bunkruptcy Program WinForm App\bin\Debug\netcoreapp3.1\Bunkruptcy Program WinForm App.deps.json
+C:\Users\user\source\repos\Bunkruptcy Program WinForm App\Bunkruptcy Program WinForm App\bin\Debug\netcoreapp3.1\Bunkruptcy Program WinForm App.runtimeconfig.json
+C:\Users\user\source\repos\Bunkruptcy Program WinForm App\Bunkruptcy Program WinForm App\bin\Debug\netcoreapp3.1\Bunkruptcy Program WinForm App.runtimeconfig.dev.json
+C:\Users\user\source\repos\Bunkruptcy Program WinForm App\Bunkruptcy Program WinForm App\bin\Debug\netcoreapp3.1\Bunkruptcy Program WinForm App.dll
+C:\Users\user\source\repos\Bunkruptcy Program WinForm App\Bunkruptcy Program WinForm App\bin\Debug\netcoreapp3.1\Bunkruptcy Program WinForm App.pdb
+C:\Users\user\source\repos\Bunkruptcy Program WinForm App\Bunkruptcy Program WinForm App\obj\Debug\netcoreapp3.1\Bunkruptcy Program WinForm App.csprojAssemblyReference.cache
+C:\Users\user\source\repos\Bunkruptcy Program WinForm App\Bunkruptcy Program WinForm App\obj\Debug\netcoreapp3.1\Bunkruptcy_Program_WinForm_App.Form1.resources
+C:\Users\user\source\repos\Bunkruptcy Program WinForm App\Bunkruptcy Program WinForm App\obj\Debug\netcoreapp3.1\Bunkruptcy_Program_WinForm_App.Main.resources
+C:\Users\user\source\repos\Bunkruptcy Program WinForm App\Bunkruptcy Program WinForm App\obj\Debug\netcoreapp3.1\Bunkruptcy Program WinForm App.csproj.GenerateResource.cache
+C:\Users\user\source\repos\Bunkruptcy Program WinForm App\Bunkruptcy Program WinForm App\obj\Debug\netcoreapp3.1\Bunkruptcy Program WinForm App.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Bunkruptcy Program WinForm App\Bunkruptcy Program WinForm App\obj\Debug\netcoreapp3.1\Bunkruptcy Program WinForm App.AssemblyInfo.cs
+C:\Users\user\source\repos\Bunkruptcy Program WinForm App\Bunkruptcy Program WinForm App\obj\Debug\netcoreapp3.1\Bunkruptcy Program WinForm App.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Bunkruptcy Program WinForm App\Bunkruptcy Program WinForm App\obj\Debug\netcoreapp3.1\Bunkruptcy Program WinForm App.dll
+C:\Users\user\source\repos\Bunkruptcy Program WinForm App\Bunkruptcy Program WinForm App\obj\Debug\netcoreapp3.1\Bunkruptcy Program WinForm App.pdb
+C:\Users\user\source\repos\Bunkruptcy Program WinForm App\Bunkruptcy Program WinForm App\obj\Debug\netcoreapp3.1\Bunkruptcy Program WinForm App.genruntimeconfig.cache
