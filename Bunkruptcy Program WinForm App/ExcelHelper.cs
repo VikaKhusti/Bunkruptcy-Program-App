@@ -13,6 +13,8 @@ namespace Bunkruptcy_Program_WinForm_App
         public static DataTableCollection tableCollection;
         public static void OpenExcelFile(MaterialSkin.Controls.MaterialTextBox tb, ComboBox cb)
         {
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+
             using (OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = ("*.xls|*xlsx") })
             {
                 if (openFileDialog.ShowDialog() == DialogResult.OK)

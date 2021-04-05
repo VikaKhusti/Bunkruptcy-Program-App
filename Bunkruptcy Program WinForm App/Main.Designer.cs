@@ -39,6 +39,7 @@ namespace Bunkruptcy_Program_WinForm_App
             this.fileTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.countBtn = new MaterialSkin.Controls.MaterialButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -62,6 +63,7 @@ namespace Bunkruptcy_Program_WinForm_App
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.countBtn);
             this.tabPage1.Controls.Add(this.openBtn);
             this.tabPage1.Controls.Add(this.sheetComboBox);
             this.tabPage1.Controls.Add(this.dataGridView1);
@@ -80,7 +82,7 @@ namespace Bunkruptcy_Program_WinForm_App
             this.openBtn.DrawShadows = true;
             this.openBtn.HighEmphasis = true;
             this.openBtn.Icon = null;
-            this.openBtn.Location = new System.Drawing.Point(679, 241);
+            this.openBtn.Location = new System.Drawing.Point(679, 294);
             this.openBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.openBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.openBtn.Name = "openBtn";
@@ -106,7 +108,7 @@ namespace Bunkruptcy_Program_WinForm_App
             this.sheetComboBox.FormattingEnabled = true;
             this.sheetComboBox.IntegralHeight = false;
             this.sheetComboBox.ItemHeight = 43;
-            this.sheetComboBox.Location = new System.Drawing.Point(12, 307);
+            this.sheetComboBox.Location = new System.Drawing.Point(12, 360);
             this.sheetComboBox.MaxDropDownItems = 4;
             this.sheetComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.sheetComboBox.Name = "sheetComboBox";
@@ -121,7 +123,7 @@ namespace Bunkruptcy_Program_WinForm_App
             this.dataGridView1.Location = new System.Drawing.Point(12, 17);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(649, 198);
+            this.dataGridView1.Size = new System.Drawing.Size(649, 245);
             this.dataGridView1.TabIndex = 1;
             // 
             // fileTextBox
@@ -129,7 +131,7 @@ namespace Bunkruptcy_Program_WinForm_App
             this.fileTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fileTextBox.Depth = 0;
             this.fileTextBox.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.fileTextBox.Location = new System.Drawing.Point(12, 233);
+            this.fileTextBox.Location = new System.Drawing.Point(12, 286);
             this.fileTextBox.MaxLength = 50;
             this.fileTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.fileTextBox.Multiline = false;
@@ -155,6 +157,26 @@ namespace Bunkruptcy_Program_WinForm_App
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "home32.png");
             this.imageList1.Images.SetKeyName(1, "settings32.png");
+            // 
+            // countBtn
+            // 
+            this.countBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.countBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.countBtn.Depth = 0;
+            this.countBtn.DrawShadows = true;
+            this.countBtn.HighEmphasis = true;
+            this.countBtn.Icon = null;
+            this.countBtn.Location = new System.Drawing.Point(503, 430);
+            this.countBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.countBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.countBtn.Name = "countBtn";
+            this.countBtn.Size = new System.Drawing.Size(158, 36);
+            this.countBtn.TabIndex = 4;
+            this.countBtn.Text = "Обчислити";
+            this.countBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.countBtn.UseAccentColor = false;
+            this.countBtn.UseVisualStyleBackColor = true;
+            this.countBtn.Click += new System.EventHandler(this.countBtn_Click);
             // 
             // Main
             // 
@@ -183,5 +205,6 @@ namespace Bunkruptcy_Program_WinForm_App
         private MaterialSkin.Controls.MaterialComboBox sheetComboBox;
         private System.Windows.Forms.DataGridView dataGridView1;
         private MaterialSkin.Controls.MaterialTextBox fileTextBox;
+        private MaterialSkin.Controls.MaterialButton countBtn;
     }
 }
