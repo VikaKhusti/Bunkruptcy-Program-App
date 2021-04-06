@@ -33,13 +33,13 @@ namespace Bunkruptcy_Program_WinForm_App
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.countBtn = new MaterialSkin.Controls.MaterialButton();
             this.openBtn = new MaterialSkin.Controls.MaterialButton();
             this.sheetComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.fileTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.countBtn = new MaterialSkin.Controls.MaterialButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -68,12 +68,34 @@ namespace Bunkruptcy_Program_WinForm_App
             this.tabPage1.Controls.Add(this.sheetComboBox);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.fileTextBox);
+            this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tabPage1.ImageKey = "home32.png";
             this.tabPage1.Location = new System.Drawing.Point(4, 39);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1070, 534);
             this.tabPage1.TabIndex = 0;
+            // 
+            // countBtn
+            // 
+            this.countBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.countBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.countBtn.Depth = 0;
+            this.countBtn.DrawShadows = true;
+            this.countBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.countBtn.HighEmphasis = true;
+            this.countBtn.Icon = null;
+            this.countBtn.Location = new System.Drawing.Point(679, 367);
+            this.countBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.countBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.countBtn.Name = "countBtn";
+            this.countBtn.Size = new System.Drawing.Size(112, 36);
+            this.countBtn.TabIndex = 4;
+            this.countBtn.Text = "Обчислити";
+            this.countBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.countBtn.UseAccentColor = false;
+            this.countBtn.UseVisualStyleBackColor = true;
+            this.countBtn.Click += new System.EventHandler(this.countBtn_Click);
             // 
             // openBtn
             // 
@@ -82,13 +104,13 @@ namespace Bunkruptcy_Program_WinForm_App
             this.openBtn.DrawShadows = true;
             this.openBtn.HighEmphasis = true;
             this.openBtn.Icon = null;
-            this.openBtn.Location = new System.Drawing.Point(679, 294);
+            this.openBtn.Location = new System.Drawing.Point(668, 294);
             this.openBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.openBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.openBtn.Name = "openBtn";
-            this.openBtn.Size = new System.Drawing.Size(95, 36);
+            this.openBtn.Size = new System.Drawing.Size(33, 36);
             this.openBtn.TabIndex = 3;
-            this.openBtn.Text = "Відкрити";
+            this.openBtn.Text = "...";
             this.openBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.openBtn.UseAccentColor = false;
             this.openBtn.UseVisualStyleBackColor = true;
@@ -123,7 +145,7 @@ namespace Bunkruptcy_Program_WinForm_App
             this.dataGridView1.Location = new System.Drawing.Point(12, 17);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(649, 245);
+            this.dataGridView1.Size = new System.Drawing.Size(561, 217);
             this.dataGridView1.TabIndex = 1;
             // 
             // fileTextBox
@@ -157,26 +179,6 @@ namespace Bunkruptcy_Program_WinForm_App
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "home32.png");
             this.imageList1.Images.SetKeyName(1, "settings32.png");
-            // 
-            // countBtn
-            // 
-            this.countBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.countBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.countBtn.Depth = 0;
-            this.countBtn.DrawShadows = true;
-            this.countBtn.HighEmphasis = true;
-            this.countBtn.Icon = null;
-            this.countBtn.Location = new System.Drawing.Point(503, 430);
-            this.countBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.countBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.countBtn.Name = "countBtn";
-            this.countBtn.Size = new System.Drawing.Size(158, 36);
-            this.countBtn.TabIndex = 4;
-            this.countBtn.Text = "Обчислити";
-            this.countBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.countBtn.UseAccentColor = false;
-            this.countBtn.UseVisualStyleBackColor = true;
-            this.countBtn.Click += new System.EventHandler(this.countBtn_Click);
             // 
             // Main
             // 

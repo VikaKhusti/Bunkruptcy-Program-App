@@ -29,12 +29,37 @@ namespace Bunkruptcy_Program_WinForm_App
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.stepIIDataGV = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.stepIIDataGV)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // stepIIDataGV
+            // 
+            this.stepIIDataGV.AllowUserToAddRows = false;
+            this.stepIIDataGV.AllowUserToDeleteRows = false;
+            this.stepIIDataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.stepIIDataGV.Location = new System.Drawing.Point(7, 71);
+            this.stepIIDataGV.Name = "stepIIDataGV";
+            this.stepIIDataGV.ReadOnly = true;
+            this.stepIIDataGV.RowTemplate.Height = 25;
+            this.stepIIDataGV.Size = new System.Drawing.Size(812, 271);
+            this.stepIIDataGV.TabIndex = 0;
+            // 
+            // Result
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1093, 593);
+            this.Controls.Add(this.stepIIDataGV);
+            this.Name = "Result";
             this.Text = "Result";
+            ((System.ComponentModel.ISupportInitialize)(this.stepIIDataGV)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView stepIIDataGV;
     }
 }

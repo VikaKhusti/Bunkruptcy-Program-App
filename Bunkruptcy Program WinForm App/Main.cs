@@ -44,7 +44,20 @@ namespace Bunkruptcy_Program_WinForm_App
 
         private void countBtn_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                Result resulForm = new Result();
+                resulForm.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show(
+                    "Не вірно внесені дані",
+                    "Помилка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+            }
         }
     }
 }
