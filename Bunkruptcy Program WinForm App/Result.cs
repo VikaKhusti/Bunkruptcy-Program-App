@@ -34,8 +34,8 @@ namespace Bunkruptcy_Program_WinForm_App
             DataTable dt = Main.dt;
             DataTable dtII = dt.Copy();
             stepIIDataGV.DataSource = dt;
-            int rowsCount = stepIIDataGV.RowCount;
-            int columnsCount = stepIIDataGV.ColumnCount;
+            int rowsCount = stepIIDataGV.RowCount - 1;
+            int columnsCount = stepIIDataGV.ColumnCount - 1;
             knowledgeBase.Add(new Therm(1, 1, 0, 0, 0.1, 0.2));
             knowledgeBase.Add(new Therm(1, 2, 0.1, 0.2, 0.25, 0.3));
             knowledgeBase.Add(new Therm(1, 3, 0.25, 0.3, 0.45, 0.5));
