@@ -44,11 +44,12 @@ namespace Bunkruptcy_Program_WinForm_App
 
         private void countBtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Result resulForm = new Result();
-                resulForm.ShowDialog();
-            }
+            //try
+            //{
+                Result resultForm = new Result();
+                resultForm.ShowDialog();
+            //}
+            /*
             catch
             {
                 MessageBox.Show(
@@ -57,7 +58,7 @@ namespace Bunkruptcy_Program_WinForm_App
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                     );
-            }
+            }*/
         }
     }
 }

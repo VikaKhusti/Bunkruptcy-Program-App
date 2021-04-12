@@ -20,19 +20,30 @@ namespace Bunkruptcy_Program_WinForm_App
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     tb.Text = openFileDialog.FileName;
-                    using (var stream = File.Open(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
+                    try
                     {
-                        using (IExcelDataReader reader = ExcelReaderFactory.CreateReader(stream))
+                        using (var stream = File.Open(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
                         {
-                            DataSet data = reader.AsDataSet(new ExcelDataSetConfiguration()
+                            using (IExcelDataReader reader = ExcelReaderFactory.CreateReader(stream))
                             {
-                                ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true }
-                            });
-                            tableCollection = data.Tables;
-                            cb.Items.Clear();
-                            foreach (DataTable table in tableCollection)
-                                cb.Items.Add(table.TableName);
+                                DataSet data = reader.AsDataSet(new ExcelDataSetConfiguration()
+                                {
+                                    ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true }
+                                });
+                                tableCollection = data.Tables;
+                                cb.Items.Clear();
+                                foreach (DataTable table in tableCollection)
+                                    cb.Items.Add(table.TableName);
+                            }
                         }
+                    } catch (Exception e)
+                    {
+                        MessageBox.Show(
+                        "Не можливо відкрити файл",
+                        "Помилка",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                        );
                     }
                 }
             }

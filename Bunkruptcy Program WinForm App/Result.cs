@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -33,7 +34,7 @@ namespace Bunkruptcy_Program_WinForm_App
             List<Therm> knowledgeBase = new List<Therm>();
             DataTable dt = Main.dt;
             DataTable dtII = dt.Copy();
-            stepIIDataGV.DataSource = dt;
+            stepIIDataGV.DataSource = dtII;
             int rowsCount = stepIIDataGV.RowCount - 1;
             int columnsCount = stepIIDataGV.ColumnCount - 1;
             knowledgeBase.Add(new Therm(1, 1, 0, 0, 0.1, 0.2));
@@ -72,6 +73,50 @@ namespace Bunkruptcy_Program_WinForm_App
             knowledgeBase.Add(new Therm(6, 4, 0.06, 0.1, 0.225, 0.4));
             knowledgeBase.Add(new Therm(6, 5, 0.225, 0.4, 100, 100));
 
+            List<IndicatorM> im = new List<IndicatorM>();
+            for (int j = 0; j < rowsCount; j++)
+            {
+                for (int i = 1; i < columnsCount; i++)
+                {
+                    Therm t1 = null;
+                    Therm t2 = null;
+                    var X = j + 1;
+                    var item = Convert.ToDouble(stepIIDataGV[i, j].Value);
+                    foreach(var kn in knowledgeBase)
+                    {                       
+                       
+                        if(kn.X == X && item > kn.a1 && item < kn.a4)
+                        {
+                            if(t1 == null)
+                            {
+                                t1 = new Therm(kn.X, kn.B, kn.a1, kn.a2, kn.a3, kn.a4);
+                            } else t2 = new Therm(kn.X, kn.B, kn.a1, kn.a2, kn.a3, kn.a4);
+                        }
+                        
+                    }
+                    im.Add(new IndicatorM(t1, t2));
+                    //Therm t1 = new Therm();
+                    //Therm t2 = new Therm();
+                    //IndicatorM m1 = new IndicatorM(t1, t2);
+                    /*
+                    var t1 = (from kn in knowledgeBase
+                                 where kn.X == 1
+                                 where kn.a4 >= (double)item
+                                 where kn.a3 <= (double)item
+                                 select kn
+                                );
+                    var t2 = (from kn in knowledgeBase
+                                 where kn.X == 1
+                                 where kn.a2 >= (double)item
+                                 where kn.a1 <= (double)item
+                                 select kn
+                                 );
+                    */
+
+
+                }
+
+            }
             
         }
         

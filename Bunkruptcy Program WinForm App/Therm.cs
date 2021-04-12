@@ -13,6 +13,7 @@ namespace Bunkruptcy_Program_WinForm_App
         public double a3 { get; set; }
         public double a4 { get; set; }
 
+        public Therm() { }
         public Therm (int X, int B, double a1, double a2, double a3,double a4)
         {
             this.X = X;
