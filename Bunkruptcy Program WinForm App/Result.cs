@@ -55,7 +55,19 @@ namespace Bunkruptcy_Program_WinForm_App
             return mval;
         }
 
+        private double getSumOfList(List<IndicatorM> list)
+        {
+            double sum = 0;
+            foreach(var item in list)
+            {
+            }
+            return sum;
+        }
+
         public void Calculation() {
+
+            // Step I
+
             List<Therm> knowledgeBase = new List<Therm>();
             DataTable dt = Main.dt.Copy();
             DataTable dtII = new DataTable();
@@ -74,25 +86,7 @@ namespace Bunkruptcy_Program_WinForm_App
 
             stepIIDataGV.DataSource = dtII;
             stepIIDataGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            /*
-            DataGridViewTextBoxColumn textBoxColumn1 = new DataGridViewTextBoxColumn();
-            textBoxColumn1.ValueType = typeof(String);
-            DataGridViewTextBoxColumn textBoxColumn2 = new DataGridViewTextBoxColumn();
-            textBoxColumn2.ValueType = typeof(String);
-            DataGridViewTextBoxColumn textBoxColumn3 = new DataGridViewTextBoxColumn();
-            textBoxColumn3.ValueType = typeof(String);
-            DataGridViewTextBoxColumn textBoxColumn4 = new DataGridViewTextBoxColumn();
-            textBoxColumn4.ValueType = typeof(String);
-            DataGridViewTextBoxColumn textBoxColumn5 = new DataGridViewTextBoxColumn();
-            textBoxColumn5.ValueType = typeof(String);
-            stepIIDataGV.Columns.Add(textBoxColumn1);
-            stepIIDataGV.Columns.Add(textBoxColumn2);
-            stepIIDataGV.Columns.Add(textBoxColumn3);
-            stepIIDataGV.Columns.Add(textBoxColumn4);
-            stepIIDataGV.Columns.Add(textBoxColumn5);
-            */
-            //DataTable dtII = dt.Copy();
-            //stepIIDataGV.DataSource = dtII;
+
             int rowsCount = dt.Rows.Count;
             int columnsCount = dt.Columns.Count;
             knowledgeBase.Add(new Therm(1, 1, 0, 0, 0.1, 0.2));
@@ -129,9 +123,7 @@ namespace Bunkruptcy_Program_WinForm_App
             knowledgeBase.Add(new Therm(6, 2, 0, 0, 0.006, 0.01));
             knowledgeBase.Add(new Therm(6, 3, 0.006, 0.01, 0.06, 0.1));
             knowledgeBase.Add(new Therm(6, 4, 0.06, 0.1, 0.225, 0.4));
-            knowledgeBase.Add(new Therm(6, 5, 0.225, 0.4, 100, 100));
-
-            
+            knowledgeBase.Add(new Therm(6, 5, 0.225, 0.4, 100, 100));            
 
             List<IndicatorM> im = new List<IndicatorM>();
             for (int j = 0; j < rowsCount; j++)
@@ -144,8 +136,6 @@ namespace Bunkruptcy_Program_WinForm_App
                     double? m1val = null;
                     double? m2val = null;
                     var X = j + 1;
-                    //var item = Convert.ToDouble(stepIIDataGV[i, j].Value);
-                    //var item = Convert.ToDouble(dt.Rows[i][j]);
                     var item = Convert.ToDouble(dt.Rows[j][i]);
                     foreach(var kn in knowledgeBase)
                     {                       
@@ -165,7 +155,7 @@ namespace Bunkruptcy_Program_WinForm_App
                         }
                         
                     }
-                    im.Add(new IndicatorM(t1, t2, m1val, m2val));
+                    im.Add(new IndicatorM(X, i, t1, t2, m1val, m2val));
                     string? m1 = $"M{t1.X}{t1.B} = {Math.Round((double)m1val, 2)}; ";
                     string? m2 = "";
                     if (t2 != null)
@@ -173,34 +163,58 @@ namespace Bunkruptcy_Program_WinForm_App
                         m2 = $"M{t2.X}{t2.B} = {Math.Round((double)m2val, 2)}";
                     }
 
-                    //stepIIDataGV[i, j].ValueType = typeof(System.String); // = m1 + m2;
                     stepIIDataGV[i, j].Value = m1 + m2;
-                    //stepIIDataGV[i, j].Value = "m";
-                    
-                    //Therm t1 = new Therm();
-                    //Therm t2 = new Therm();
-                    //IndicatorM m1 = new IndicatorM(t1, t2);
-                    /*
-                    var t1 = (from kn in knowledgeBase
-                                 where kn.X == 1
-                                 where kn.a4 >= (double)item
-                                 where kn.a3 <= (double)item
-                                 select kn
-                                );
-                    var t2 = (from kn in knowledgeBase
-                                 where kn.X == 1
-                                 where kn.a2 >= (double)item
-                                 where kn.a1 <= (double)item
-                                 select kn
-                                 );
-                    */
-
 
                 }
 
             }
-            
-            
+
+            //Step II
+
+            DataTable dtIII = Main.dt.Copy();
+            stepIIIDataGV.DataSource = dtIII;
+
+            List<CoefficientG> g = new List<CoefficientG>();
+            g.Add(new CoefficientG(1, 0.125));
+            g.Add(new CoefficientG(2, 0.3));
+            g.Add(new CoefficientG(3, 0.5));
+            g.Add(new CoefficientG(4, 0.7));
+            g.Add(new CoefficientG(5, 0.875));
+
+            List<double> gResult = new List<double>();
+            for (int i = 1; i < columnsCount; i++)
+            {
+                double GijSum = 0;
+                for (int j = 0; j < rowsCount; j++)
+                {
+                    var item = stepIIIDataGV[i, j].Value;
+                    //List<IndicatorM> localM = new List<IndicatorM>();
+                    double? Gij = 0;
+                    foreach (var v in im)
+                    {
+                        if (v.M1.B == j + 1 && v.B == i)
+                            Gij += v.m1Value;
+                        if (v.M2 != null)
+                        {
+                            if (v.M2.B == i && v.B == j+1)
+                                Gij += v.m1Value;
+                        }
+                    }
+                    if (Gij != 0)
+                    {
+                        Gij /= 6;
+                        foreach (var itm in g)
+                        {
+                            if (itm.GNum == (j + 1)) Gij *= itm.GVal;
+                        }
+                    }
+                    GijSum += (double)Gij;
+                    
+                    stepIIIDataGV[i, j].Value = Math.Round((double)Gij, 4);
+                }
+                gResult.Add(GijSum);
+            }
+            Console.WriteLine(gResult);
         }
 
 

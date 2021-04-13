@@ -30,7 +30,9 @@ namespace Bunkruptcy_Program_WinForm_App
         private void InitializeComponent()
         {
             this.stepIIDataGV = new System.Windows.Forms.DataGridView();
+            this.stepIIIDataGV = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.stepIIDataGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepIIIDataGV)).BeginInit();
             this.SuspendLayout();
             // 
             // stepIIDataGV
@@ -44,18 +46,34 @@ namespace Bunkruptcy_Program_WinForm_App
             this.stepIIDataGV.Name = "stepIIDataGV";
             this.stepIIDataGV.ReadOnly = true;
             this.stepIIDataGV.RowTemplate.Height = 25;
-            this.stepIIDataGV.Size = new System.Drawing.Size(796, 209);
+            this.stepIIDataGV.Size = new System.Drawing.Size(796, 200);
             this.stepIIDataGV.TabIndex = 0;
+            // 
+            // stepIIIDataGV
+            // 
+            this.stepIIIDataGV.AllowUserToAddRows = false;
+            this.stepIIIDataGV.AllowUserToDeleteRows = false;
+            this.stepIIIDataGV.AllowUserToOrderColumns = true;
+            this.stepIIIDataGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.stepIIIDataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.stepIIIDataGV.Location = new System.Drawing.Point(7, 286);
+            this.stepIIIDataGV.Name = "stepIIIDataGV";
+            this.stepIIIDataGV.ReadOnly = true;
+            this.stepIIIDataGV.RowTemplate.Height = 25;
+            this.stepIIIDataGV.Size = new System.Drawing.Size(552, 194);
+            this.stepIIIDataGV.TabIndex = 1;
             // 
             // Result
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 593);
+            this.Controls.Add(this.stepIIIDataGV);
             this.Controls.Add(this.stepIIDataGV);
             this.Name = "Result";
             this.Text = "Result";
             ((System.ComponentModel.ISupportInitialize)(this.stepIIDataGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepIIIDataGV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -63,5 +81,6 @@ namespace Bunkruptcy_Program_WinForm_App
         #endregion
 
         private System.Windows.Forms.DataGridView stepIIDataGV;
+        private System.Windows.Forms.DataGridView stepIIIDataGV;
     }
 }
