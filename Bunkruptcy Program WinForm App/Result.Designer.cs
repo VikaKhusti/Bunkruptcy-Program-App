@@ -37,12 +37,14 @@ namespace Bunkruptcy_Program_WinForm_App
             // 
             this.stepIIDataGV.AllowUserToAddRows = false;
             this.stepIIDataGV.AllowUserToDeleteRows = false;
+            this.stepIIDataGV.AllowUserToOrderColumns = true;
+            this.stepIIDataGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.stepIIDataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stepIIDataGV.Location = new System.Drawing.Point(7, 71);
             this.stepIIDataGV.Name = "stepIIDataGV";
             this.stepIIDataGV.ReadOnly = true;
             this.stepIIDataGV.RowTemplate.Height = 25;
-            this.stepIIDataGV.Size = new System.Drawing.Size(812, 271);
+            this.stepIIDataGV.Size = new System.Drawing.Size(796, 209);
             this.stepIIDataGV.TabIndex = 0;
             // 
             // Result
