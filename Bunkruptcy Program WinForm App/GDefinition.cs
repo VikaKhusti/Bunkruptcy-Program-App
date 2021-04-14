@@ -8,5 +8,13 @@ namespace Bunkruptcy_Program_WinForm_App
     {
         public int Num { get; set; }
         public string Definition { get; set; }
+        
+        public GDefinition(int Num, string Definition)
+        {
+            this.Num = Num;
+            this.Definition = Definition;
+        }
     }
+
+   
 }

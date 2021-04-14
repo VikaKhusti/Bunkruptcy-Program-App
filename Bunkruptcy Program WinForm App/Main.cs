@@ -44,7 +44,7 @@ namespace Bunkruptcy_Program_WinForm_App
 
         private void countBtn_Click(object sender, EventArgs e)
         {
-            /*
+            
             try
             {
                 Result resultForm = new Result();
@@ -60,9 +60,6 @@ namespace Bunkruptcy_Program_WinForm_App
                     MessageBoxIcon.Error
                     );
             }
-            */
-            Result resultForm = new Result();
-            resultForm.ShowDialog();
         }
     }
 }

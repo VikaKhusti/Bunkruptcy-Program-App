@@ -27,6 +27,7 @@ namespace Bunkruptcy_Program_WinForm_App
                 MaterialSkin.Accent.DeepOrange700,
                 MaterialSkin.TextShade.WHITE
                 );
+
             Calculation();
         }
         private double getMValue(double val, Therm t)
@@ -214,7 +215,29 @@ namespace Bunkruptcy_Program_WinForm_App
                 }
                 gResult.Add(GijSum);
             }
-            Console.WriteLine(gResult);
+            //Dictionary<int, List<MResult>> results = new Dictionary<int, List<MResult>>();
+            List<List<MResult>> results = new List<List<MResult>>();
+            int istep = 1;
+            foreach (var gres in gResult)
+            {                
+                MResult m = new MResult();
+                List<MResult> res = m.getResults(gres);
+                results.Add(res);
+                istep++;
+            }
+            string output = "";
+            resultLabel.Text = "Результати обчислення :";
+            int step = 1;
+            foreach (var r in results)
+            {
+                output += $"\n Стан підприємства за {step} квартал: G{r[0].MNum}(M{r[0].MNum} = {r[0].GValue}) - {r[0].Definition.Definition}";
+                if(r.Count > 1)
+                {
+                    output += $" або G{r[1].MNum}(M{r[1].MNum} = {r[1].GValue}) - {r[0].Definition.Definition}";
+                }
+                step++;
+            }
+            resultMultiLineTextBox.Text = output;
         }
 
 
